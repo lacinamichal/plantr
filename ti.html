@@ -51,5 +51,33 @@
       % %f - normalne liczby
       % %e - notacja wykładnicza
     </p>
+    <h1>prawie gotowe</h1>
+    <p>
+      x = -0.8;
+      dx = 0.1;
+      f = sqrt(1+x);
+      N = 5;
+      s = 0;
+      a = 1;
+      for i=1:N
+          s = s + a;
+          a = ((-1*a*(2*i-3)))*x/(2*i);
+      end
+      b = abs(f-s);
+      fprintf('x = %f, f = %.4f, b = %e\n', x, f, s, b)
+      for j=1:5
+          f = sqrt(1+x);
+          N = 5;
+          s = 0;
+          a = 1;
+          for i=1:N
+              s = s + a;
+              a = ((-1*a*(2*i-3)))*x/(2*i);
+              b = abs(f-s);
+              fprintf('x = %f, f = %.4f, b = %e\n', x, f, s, b)
+              x = x + dx;
+          end
+      end
+    </p>
   </body>
 </html>
