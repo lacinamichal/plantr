@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ściąga</title>
+    <style>
+        </style>
+  </head>
+  <body>
+    <h1>Obszary od A do B x=x+dx</h1>
+    <p>
+      %Obszar od A do B, dzielę na N=4 odcinków. Odległość między punktami = dx.
+      %A=0 B=1 dx=0.25 
+
+      A = 0;
+      B = 1;
+      N = 4;
+      dx = abs(A-B)/N
+      x = A;
+      fx = exp(x);
+      fprintf('x = %f, f(x) = %g\n', x, fx)
+      for i=1:N
+        x = x+dx;
+        fx = exp(x);
+        fprintf('x = %f, \t f(x) = %f\n', x, fx)
+      end
+    </p>
+    <h1>e do x</h1>
+    <p>
+      % a0 = 1
+      % a1 = x/1
+      % a2 = (x*x)/1*2
+      % a3 = (x*x*x)/1*2*3
+      % an = an-1 * x/n
+      x = 5;
+      f = exp(x);
+      N = 5;
+      s = 0;
+      a = 1;
+
+      for i=0:N
+          s = s + a;
+          a = a*(x/(i+1));
+          
+          %s = s + ((x^i)/factorial(i));
+      end
+
+      b = abs(f-s);
+
+      fprintf('f = %.4f, s = %.4f, |f-s| = %.4e \n', f, s, b)
+      % %f - normalne liczby
+      % %e - notacja wykładnicza
+    </p>
+  </body>
+</html>
